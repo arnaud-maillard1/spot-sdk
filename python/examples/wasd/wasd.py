@@ -413,11 +413,12 @@ class WasdInterface(object):
         self._start_robot_command('self_right', RobotCommandBuilder.selfright_command())
 
     def _battery_change_pose(self):
+        self.add_message('IMPOSSIBLE DE FAIRE CETTE COMMANDE, CAR LE MATERIEL DE MON TB EST SUR SON DOS ALORS CA VA TOUT CASSE')
         # Default HINT_RIGHT, maybe add option to choose direction?
-        self._start_robot_command(
-            'battery_change_pose',
-            RobotCommandBuilder.battery_change_pose_command(
-                dir_hint=basic_command_pb2.BatteryChangePoseCommand.Request.HINT_RIGHT))
+        # self._start_robot_command(
+        #     'battery_change_pose',
+        #     RobotCommandBuilder.battery_change_pose_command(
+        #         dir_hint=basic_command_pb2.BatteryChangePoseCommand.Request.HINT_RIGHT))
 
     def _sit(self):
         self._start_robot_command('sit', RobotCommandBuilder.synchro_sit_command())
